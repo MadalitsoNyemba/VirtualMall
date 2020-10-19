@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+ 
+  <v-app>
+    <v-main>
+      <router-view />
+    </v-main>
+    <v-bottom-navigation app grow >
+    <v-btn to="/">
+      <span>Home</span>
+      <v-icon>mdi-home</v-icon>
+    </v-btn>
+    <v-btn to="/cart">
+      <span>Cart (2)</span>
+      <v-icon>mdi-cart</v-icon>
+    </v-btn>
+
+    <v-btn to="/favorites">
+      <span>Favorites</span>
+      <v-icon>mdi-heart</v-icon>
+    </v-btn>
+  </v-bottom-navigation>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
-}
+export default {
+  name: "App",
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    //
+  })
+};
+</script>

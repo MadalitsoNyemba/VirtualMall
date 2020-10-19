@@ -11,14 +11,30 @@ const routes = [
     component: Home
   },
   {
-    path: "/about",
-    name: "About",
+    path: "/cart",
+    name: "Cart",
     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
+    // this generates a separate chunk (cart.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+      import(/* webpackChunkName: "cart" */ "../views/Cart.vue")
+  },
+  {
+    path: "/favorites",
+    name: "Favorites",
+  
+    component: () =>
+      import(/* webpackChunkName: "cart" */ "../views/Favorites.vue")
   }
+  ,
+  {
+    path: "/products/:slug",
+    name: "Products",
+  
+    component: () =>
+      import(/* webpackChunkName: "cart" */ "../views/Products.vue")
+  }
+  
 ];
 
 const router = new VueRouter({
